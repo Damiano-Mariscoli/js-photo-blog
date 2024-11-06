@@ -1,0 +1,82 @@
+/* RESET RULES */
+
+html{
+    font-family: sans-serif;
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+ul,ol{
+    list-style-type: none;
+}
+a{
+    color: currentColor;
+    text-decoration: none;
+}
+
+/* STYLE RULE */
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+.d-flex{
+    display: flex;
+}
+.justify-center{
+    justify-content: center;
+}
+.align-center{
+    align-items: center;
+}
+.header {
+    background-image: url("../img/wall.png");
+    height: 100px;
+}
+html{
+    background-image: url("../img/cork.png");
+    height: 100%;
+}
+.col-3{
+    flex-basis: calc(100% / 12 * 3);
+
+}
+.gap-5{
+    gap: 20px;
+}
+.mt-5{
+    margin-top: 50px;
+}
+.card{
+    height: 100%;
+    width: 260px;
+    background-color: white;
+}
+.image{
+    width: 100%;
+    aspect-ratio: 1/1;
+    
+}
+.flex-column{
+    flex-direction: column;
+}
+.p-4{
+    padding: 15px;
+}
+.relative{
+    position: relative;
+}
+.absolute{
+    position: absolute;
+}
+.pin-center{
+    right: 50%;
+    transform: translateX(50%);
+    top: -15px;
+}
+/* DEBUG */
+
+.debug{
+    border: solid 1px black;
+}
