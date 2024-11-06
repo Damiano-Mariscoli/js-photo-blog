@@ -24,7 +24,7 @@ card = document.getElementById('row-card')
 axios.get('https://jsonplaceholder.typicode.com/photos?_limit=6')
   .then(el => {
     const data = el.data;
-    console.log(data)
+    console.log
     data.forEach(photo => {
       card.innerHTML += `
             <div class="col-3">

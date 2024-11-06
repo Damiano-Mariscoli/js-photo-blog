@@ -40,7 +40,7 @@ html{
 }
 .col-3{
     flex-basis: calc(100% /12 * 3);
-
+    
 }
 .gap-5{
     gap: 20px;
@@ -49,8 +49,8 @@ html{
     margin-top: 50px;
 }
 .card{
-    height: 100%;
-    width: 260px;
+    height: 400px;
+    width: 300px;
     background-color: white;
 }
 .image{
