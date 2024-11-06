@@ -39,7 +39,7 @@ html{
     height: 100%;
 }
 .col-3{
-    flex-basis: calc(100% / 12 * 3);
+    flex-basis: calc(100% /12 * 3);
 
 }
 .gap-5{
