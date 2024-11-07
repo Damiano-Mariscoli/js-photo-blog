@@ -18,36 +18,38 @@
           </div>
 */
 
-
 card = document.getElementById('row-card')
 
 axios.get('https://jsonplaceholder.typicode.com/photos?_limit=6')
   .then(el => {
-    const data = el.data;
+    const data = el.data
     console.log
     data.forEach(photo => {
-      const cardElement = document.createElement('div');
-      cardElement.className = 'card relative';
+      const cardElement = document.createElement('div')
+      cardElement.className = 'col-3'
       cardElement.innerHTML = `
-            <div>
-              <img class="absolute pin-center" src="./img/pin.svg" alt="">
-            </div>
-            <div class="card-wrap d-flex justify-center flex-column align-center p-4 gap-5">
+            <div class="card debug relative">
               <div>
-                <img class="image" src="${photo.url}" alt="">
+                <img class="absolute pin-center" src="./img/pin.svg" alt="">
               </div>
-              <div class="caption">
-                <p>
-                  ${photo.title}
-                </p>
-              </div>
+                <div class="card-wrap d-flex justify-center flex-column align-center p-4 gap-5">
+                    <div>
+                        <img class="image" src="${photo.url}" alt="">
+                    </div>
+                    <div class="caption">
+                        <p>
+                           ${photo.title}
+                        </p>
+                    </div>
+                </div>
             </div>
-      `
-      cardElement.addEventListener('click', () => {
-        console.log(`${photo.id}`)
-      })
-      card.appendChild(cardElement)
+          </div>
+      `;
+      card.appendChild(cardElement);
+      cardElement.addEventListener('click', (e) => {
+        
+      });
     })
   })
-  .catch(err => console.error(err));
+  .catch(err => console.error(err))
 
