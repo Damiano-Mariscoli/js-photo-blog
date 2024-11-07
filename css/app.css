@@ -17,10 +17,16 @@ a{
 }
 
 /* STYLE RULE */
+.container-full{
+    width: 100%;
+}
+.container-lg{
+    max-width: 1200px;
+}
 .row{
     display: flex;
-    flex-wrap: wrap;
-    width: 100%;
+    flex-wrap:wrap;
+
 }
 .d-flex{
     display: flex;
@@ -39,11 +45,9 @@ html{
     background-image: url("../img/cork.png");
     height: 100%;
 }
+
 .col-3{
-    flex-basis: calc(100% / 12* 3);
-    display: flex;
-    justify-content: center;
-    
+    max-width: 300px;
 }
 .gap-5{
     gap: 20px;
@@ -53,7 +57,6 @@ html{
 }
 .card{
     height: 400px;
-    width: 300px;
     background-color: white;
 }
 .image{
@@ -99,6 +102,10 @@ html{
 .d-block{
     display: block;
 }
+.justify-between{
+    justify-content: space-between;
+}
+
 /* DEBUG */
 
 .debug{

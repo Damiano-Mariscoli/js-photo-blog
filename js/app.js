@@ -29,7 +29,7 @@ axios
       const cardElement = document.createElement("div");
       cardElement.className = "col-3";
       cardElement.innerHTML = `
-            <div class="card debug relative">
+            <div class="card relative">
               <div>
                 <img class="absolute pin-center" src="./img/pin.svg" alt="">
               </div>
