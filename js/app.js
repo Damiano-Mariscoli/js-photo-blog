@@ -22,6 +22,7 @@ card = document.getElementById('row-card')
 
 axios.get('https://jsonplaceholder.typicode.com/photos?_limit=6')
   .then(el => {
+    
     const data = el.data
     console.log
     data.forEach(photo => {
@@ -44,11 +45,17 @@ axios.get('https://jsonplaceholder.typicode.com/photos?_limit=6')
                 </div>
             </div>
           </div>
-      `;
+      `
       card.appendChild(cardElement);
       cardElement.addEventListener('click', (e) => {
-        
-      });
+        const overlayElement = document.createElement('div')
+        overlayElement.className = 'overlay d-flex justify-center align-center flex-column gap-5 relative'
+        overlayElement.innerHTML = `
+          <button class="absolute btn">chiudi</button>
+            <img src="${photo.url}" alt="">
+        `
+        document.body.appendChild(overlayElement)
+      })
     })
   })
   .catch(err => console.error(err))
