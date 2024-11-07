@@ -51,10 +51,15 @@ axios.get('https://jsonplaceholder.typicode.com/photos?_limit=6')
         const overlayElement = document.createElement('div')
         overlayElement.className = 'overlay d-flex justify-center align-center flex-column gap-5 relative'
         overlayElement.innerHTML = `
-          <button class="absolute btn">chiudi</button>
+          <button id="btn" class="absolute btn">chiudi</button>
             <img src="${photo.url}" alt="">
         `
         document.body.appendChild(overlayElement)
+
+      })
+      button = getElementById('btn')
+      button.addEventListener('click', (e) =>{
+        console.log('chiudi')
       })
     })
   })
