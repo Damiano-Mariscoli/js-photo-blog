@@ -26,26 +26,28 @@ axios.get('https://jsonplaceholder.typicode.com/photos?_limit=6')
     const data = el.data;
     console.log
     data.forEach(photo => {
-      card.innerHTML += `
-            <div class="col-3">
-              <div class="card debug relative">
-                <div>
-                  <img class="absolute pin-center" src="./img/pin.svg" alt="">
-                </div>
-                <div class="card-wrap d-flex justify-center flex-column align-center p-4 gap-5">
-                  <div>
-                    <img class="image" src="${photo.url}" alt="">
-                  </div>
-                  <div class="caption">
-                    <p>
-                      ${photo.title}
-                    </p>
-                  </div>
-                </div>
+      const cardElement = document.createElement('div');
+      cardElement.className = 'card relative';
+      cardElement.innerHTML = `
+            <div>
+              <img class="absolute pin-center" src="./img/pin.svg" alt="">
+            </div>
+            <div class="card-wrap d-flex justify-center flex-column align-center p-4 gap-5">
+              <div>
+                <img class="image" src="${photo.url}" alt="">
+              </div>
+              <div class="caption">
+                <p>
+                  ${photo.title}
+                </p>
               </div>
             </div>
       `
+      cardElement.addEventListener('click', () => {
+        console.log(`${photo.id}`)
+      })
+      card.appendChild(cardElement)
     })
   })
   .catch(err => console.error(err));
-    
+
