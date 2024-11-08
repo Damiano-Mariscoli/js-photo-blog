@@ -19,12 +19,12 @@
 */
 
 card = document.getElementById("row-card");
-console.log(card)
+console.log(card);
 axios
   .get("https://jsonplaceholder.typicode.com/photos?_limit=6")
   .then((el) => {
     const data = el.data;
-    console.log(el)
+    console.log(el);
     console.log(data);
     data.forEach((photo) => {
       const cardElement = document.createElement("div");
@@ -49,7 +49,7 @@ axios
       `;
       card.appendChild(cardElement);
       cardElement.addEventListener("click", (e) => {
-        console.log(`${photo.id}`)
+        console.log(`${photo.id}`);
         const overlayElement = document.createElement("div");
         overlayElement.className =
           "overlay d-flex justify-center align-center flex-column gap-5 relative";
@@ -60,9 +60,18 @@ axios
         `;
         document.body.appendChild(overlayElement);
 
+        
+
         button = document.getElementById("btn");
         button.addEventListener("click", (e) => {
-          console.log("chiudi");
+          e.stopPropagation();
+          console.log("chiudi con btn");
+          overlayElement.remove(overlayElement);
+          
+        });
+        overlayElement.addEventListener("click", (e) => {
+          console.log("chiudi con overlay");
+          if (e.target.tagName !== 'IMG')     
           overlayElement.remove(overlayElement);
         });
       });
