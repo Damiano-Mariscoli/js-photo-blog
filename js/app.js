@@ -19,12 +19,13 @@
 */
 
 card = document.getElementById("row-card");
-
+console.log(card)
 axios
-  .get("https://jsonplaceholder.typicode.com/photos?_limit=12")
+  .get("https://jsonplaceholder.typicode.com/photos?_limit=6")
   .then((el) => {
     const data = el.data;
-    console.log;
+    console.log(el)
+    console.log(data);
     data.forEach((photo) => {
       const cardElement = document.createElement("div");
       cardElement.className = "col-3";
@@ -53,7 +54,7 @@ axios
         overlayElement.className =
           "overlay d-flex justify-center align-center flex-column gap-5 relative";
         overlayElement.innerHTML = `
-          <img src="${photo.url}" alt="">
+          <img class="img-overlay" src="${photo.url}" alt="">
           <button id="btn" class="absolute btn">chiudi</button>
             
         `;
